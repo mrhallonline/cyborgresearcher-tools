@@ -1,21 +1,21 @@
 # cyborgresearcher-tools
 
-WhisperX Transcription + Diarization Audio Processing (Colab Edition)
+# WhisperX Transcription + Diarization Audio Processing (Colab Edition)
 This repository contains a Google Colab-ready Jupyter notebook for qualitative researchers to transcribe, diarize speakers, and convert audio files into usable text formats (CSV, TXT, JSON, and VTT). It combines advanced transcription capabilities from WhisperX with diarization support from pyannote.audio.
 
 What This Version Does
-✅ Runs entirely in-browser (via Google Colab)
-✅ Installs all packages automatically
-✅ Accepts file uploads (.wav, .mp3, .ogg) for transcription
-✅ Prompts for a Hugging Face token (required for diarization)
-✅ Supports speaker diarization and pseudonym replacement
-✅ Saves outputs in CSV format, ready for coding or analysis
+1. ✅ Runs entirely in-browser (via Google Colab)
+2. ✅ Installs all packages automatically
+3. ✅ Accepts file uploads (.wav, .mp3, .ogg) for transcription
+4. ✅ Prompts for a Hugging Face token (required for diarization)
+5. ✅ Supports speaker diarization and pseudonym replacement
+6. ✅ Saves outputs in CSV format, ready for coding or analysis
 
 How to Use This Notebook
 A. Open the Notebook in Colab
 B. Upload Your Files
-You’ll be prompted to upload:
-Your audio file (must be .wav, .mp3, or .ogg)
+* You’ll be prompted to upload:
+* Your audio file (must be .wav, .mp3, or .ogg)
 
 (Optional) A CSV file named pseudonyms.csv to anonymize names and locations
 
