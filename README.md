@@ -1,57 +1,68 @@
 # cyborgresearcher-tools
 
-# WhisperX Transcription + Diarization Audio Processing (Colab Edition)
-This repository contains a Google Colab-ready Jupyter notebook for qualitative researchers to transcribe, diarize speakers, and convert audio files into usable text formats (CSV, TXT, JSON, and VTT). It combines advanced transcription capabilities from WhisperX with diarization support from pyannote.audio.
+WhisperX + Speaker Diarization (Colab Edition)
+This repository provides a Google Colab notebook for transcribing and diarizing audio files using WhisperX and pyannote.audio. The goal is to support qualitative researchers—especially in education and the social sciences—by making complex NLP tools accessible.
 
-What This Version Does
-1. ✅ Runs entirely in-browser (via Google Colab)
-2. ✅ Installs all packages automatically
-3. ✅ Accepts file uploads (.wav, .mp3, .ogg) for transcription
-4. ✅ Prompts for a Hugging Face token (required for diarization)
-5. ✅ Supports speaker diarization and pseudonym replacement
-6. ✅ Saves outputs in CSV format, ready for coding or analysis
+🔍 What This Version Does
+Transcribes audio with WhisperX, including word-level timestamps
 
-How to Use This Notebook
-A. Open the Notebook in Colab
-B. Upload Your Files
-* You’ll be prompted to upload:
-* Your audio file (must be .wav, .mp3, or .ogg)
+Performs speaker diarization using Hugging Face’s pyannote/speaker-diarization
 
-(Optional) A CSV file named pseudonyms.csv to anonymize names and locations
+Merges speaker segments with aligned transcript using timestamp overlap
+
+Outputs a clean CSV with start, end, word, and speaker
+
+All in a single browser session, no installation needed.
+
+🚀 How to Use
+A. Run in Colab
+
+B. Upload Files
+You’ll be prompted to upload:
+
+An audio file (.wav, .mp3, or .ogg)
+
+(Optional) A pseudonyms.csv file if you're integrating anonymization in a later step
 
 C. Enter Hugging Face Token
-This is needed specifically for speaker diarization.
-If you don’t already have one, follow these steps:
+To run the diarization step, the notebook will ask for a Hugging Face token.
+👉 Get yours here
 
-Go to https://huggingface.co/settings/tokens
-
-Click "New token"
-
-Copy the token and paste it when prompted in the notebook
-
-D. Outputs
+D. Output
 The notebook will generate:
 
-transcript_output.csv: includes start, end, text, and speaker
+Column	Description
+start	Start time of each word
+end	End time of each word
+word	Transcribed word text
+speaker	Speaker label from diarization
 
-Word-level aligned transcripts
+All of this is saved as transcript_with_speakers.csv.
 
-Anonymized output (if pseudonyms were uploaded)
+📂 Sample Files
+Try it out with:
 
-Sample Files
-You can try out the pipeline with these:
+sample_clip.wav
 
-sample_clip.wav: A 10-second placeholder audio file
+pseudonyms.csv
 
-pseudonyms.csv: Example mapping of real names to pseudonyms
+These are especially helpful if you're new to audio transcription pipelines.
 
-Example CSV Output
-start	end	speaker	text
-0.23	2.14	Speaker A	Yeah, I think that’s true…
-2.15	3.40	Speaker B	But it depends on the context.
+🧠 Educational Use Cases
+Discourse analysis in classrooms
 
-Notes on Privacy
-All processing happens within the Colab environment. No audio or transcript files are uploaded to third-party servers (except to Whisper/pyannote models through Hugging Face). That said, please anonymize your files or use the provided pseudonym system when working with identifiable data.
+Coding teacher interviews for student agency
+
+Identifying shifts in speaker stance over time
+
+Locating affective or epistemic language by speaker
+
+🔒 Notes on Privacy
+This tool is designed with ethical research in mind. All processing occurs inside your Colab session. No audio or transcripts are uploaded to external servers beyond what's required by Hugging Face diarization models.
+
+👋 Questions?
+This tool is part of a broader effort to create accessible NLP-powered research workflows for education researchers. If you're curious, stuck, or excited, reach out or explore the other tools in this repo.
+
 
 Credits and Attribution
 WhisperX by @m-bain
